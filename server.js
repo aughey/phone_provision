@@ -5,8 +5,10 @@ var fs = require('fs');
 var Mustache = require('mustache');
 var _ = require('underscore');
 var morgan = require('morgan');
+var stream = require('logrotate-stream')
+  , toLogFile = stream({ file: 'logs/access.log', size: '100k', keep: 3 });
 
-app.use(morgan('combined'));
+app.use(morgan('combined', {stream: toLogFile}));
 
 var state = {
   next_available: 5,
@@ -31,7 +33,7 @@ try {
 } catch(e) {
   console.log("Couldn't parse state.json");
   console.log(e);
-//  process.exit(1);
+  process.exit(1);
 }
 
 function mac_to_colon(mac) {
@@ -84,6 +86,7 @@ function generateConfig(mac,path) {
       state.mapping[cmac] = mapping;
       console.log("  New extension given: " + mapping.extension);
     }
+    console.log("  Using extension: " + mapping.extension);
 
     var template = fs.readFileSync("template.mustache").toString();
     var out = Mustache.render(template,{mac:mac,extension:pad(mapping.extension,3)});
@@ -126,9 +129,9 @@ app.get(configre, function(req, res,next) {
 
 app.use(express.static('html'));
 
-var server = app.listen(3000, function () {
+var server = app.listen(3333, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Grandstream Phone Provisioning app listening at http://%s:%s', host, port);
 });

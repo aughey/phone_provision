@@ -1,5 +1,5 @@
 {
- "next_available": 14,
+ "next_available": 5,
  "mapping": {
   "00:0b:82:5e:06:2d": {
    "extension": 1
@@ -12,6 +12,10 @@
   },
   "00:0b:82:5e:03:a7": {
    "extension": 4
+  },
+  "zzzz00:0b:82:5c:f9:6d": {
+   "extension": 5,
+   "ctime": "Fri Aug 07 2015 10:37:17 GMT-0500 (CDT)"
   }
  }
 }
