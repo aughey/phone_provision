@@ -28,6 +28,16 @@ var state = {
   }
 };
 
+function get_next_available() {
+  for(var i=1;i<98;++i) {
+    if(!_.find(state.mapping, function(m) { return m.extension == i })) {
+      return i;
+    }
+  }
+  console.log("ERROR: Ran out of extensions");
+  return 99;
+}
+
 try {
   state = JSON.parse(fs.readFileSync("state.json").toString());
 } catch(e) {
@@ -80,9 +90,8 @@ function generateConfig(mac,path) {
     var mapping = state.mapping[cmac];
     if(!mapping) {
       mapping = {
-        extension: state.next_available
+        extension: get_next_available()
       }
-      state.next_available+=1;
       state.mapping[cmac] = mapping;
       console.log("  New extension given: " + mapping.extension);
     }
@@ -134,4 +143,5 @@ var server = app.listen(3333, function () {
   var port = server.address().port;
 
   console.log('Grandstream Phone Provisioning app listening at http://%s:%s', host, port);
+  console.log("  Next available extension is: " + get_next_available());
 });
