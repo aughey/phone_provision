@@ -412,7 +412,7 @@
 
 <!--# Account Name-->
 <!--# String-->
-<!--# P270 =-->
+    <P270>013</P270>
 
 <!--# SIP Server-->
 <!--# String-->
@@ -432,23 +432,23 @@
 
 <!--# SIP User ID-->
 <!--# String-->
-    <P35>6</P35>
+    <P35>013</P35>
 
 <!--# Authenticate ID-->
 <!--# String-->
-    <P36>6</P36>
+    <P36>013</P36>
 
 <!--# Authenticate Password-->
 <!--# String-->
-    <P34>6</P34>
+    <P34>013</P34>
 
 <!--# Display Name-->
 <!--# String-->
-    <P3>6</P3>
+    <P3>013</P3>
 
 <!--# Voice Mail UserID-->
 <!--# String-->
-    <P33>6</P33>
+    <P33>013</P33>
 
 <!--##########################################-->
 <!--# Account 1/Network Settings-->
@@ -890,7 +890,7 @@
 <!--# Dial Plan. Default is { x+ | *x+ | *xx*x+ }-->
 <!--# String-->
 <!--# Mandatory-->
-    <P290>{x+|*x+|*xx*x+}</P290>
+    <P290>{10x|0xx|*0xx|[2-9]xxxxxx|314[2-9]xxxxxx|636[2-9]xxxxxx|1[2-9]xx[2-9]xxxxxx}</P290>
 
 <!--# Delayed Call Forward Wait Time (in seconds). Default is 20-->
 <!--# Number: 1 - 120-->
@@ -965,7 +965,7 @@
 <!--# Allow Auto Answer by Call-Info. 0 - No, 1 - Yes. Default is 0-->
 <!--# Number: 0, 1-->
 <!--# Mandatory-->
-    <P298>0</P298>
+    <P298>1</P298>
 
 <!--# Custom Call-info for Auto Answer. -->
 <!--# String-->
