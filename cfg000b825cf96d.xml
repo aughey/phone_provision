@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- BroadSoft XML Provisioning Configuration -->
 <gs_provision version="1">
-<mac>000B82000001</mac>
+<mac>000b825cf96d</mac>
   <config version="1">
 <!--################################################################################################-->
 <!--## Configuration Template For GXP140x Firmware Version 1.0.8.4                                ##-->
@@ -412,7 +412,7 @@
 
 <!--# Account Name-->
 <!--# String-->
-<!--# P270 =-->
+    <P270>205</P270>
 
 <!--# SIP Server-->
 <!--# String-->
@@ -432,15 +432,15 @@
 
 <!--# SIP User ID-->
 <!--# String-->
-    <P35>test1</P35>
+    <P35>205</P35>
 
 <!--# Authenticate ID-->
 <!--# String-->
-    <P36>auth1</P36>
+    <P36>205</P36>
 
 <!--# Authenticate Password-->
 <!--# String-->
-    <P34>pass1</P34>
+    <P34>205</P34>
 
 <!--# Display Name-->
 <!--# String-->
@@ -890,7 +890,7 @@
 <!--# Dial Plan. Default is { x+ | *x+ | *xx*x+ }-->
 <!--# String-->
 <!--# Mandatory-->
-    <P290>{x+|*x+|*xx*x+}</P290>
+    <P290>{10x|0xx|*0xx|[2-9]xxxxxx|314[2-9]xxxxxx|636[2-9]xxxxxx|1[2-9]xx[2-9]xxxxxx}</P290>
 
 <!--# Delayed Call Forward Wait Time (in seconds). Default is 20-->
 <!--# Number: 1 - 120-->
@@ -965,7 +965,7 @@
 <!--# Allow Auto Answer by Call-Info. 0 - No, 1 - Yes. Default is 0-->
 <!--# Number: 0, 1-->
 <!--# Mandatory-->
-    <P298>0</P298>
+    <P298>1</P298>
 
 <!--# Custom Call-info for Auto Answer. -->
 <!--# String-->

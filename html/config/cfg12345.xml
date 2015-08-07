@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- BroadSoft XML Provisioning Configuration -->
 <gs_provision version="1">
-<mac>000B82000003</mac>
+<mac>12345</mac>
   <config version="1">
 <!--################################################################################################-->
 <!--## Configuration Template For GXP140x Firmware Version 1.0.8.4                                ##-->
@@ -432,23 +432,23 @@
 
 <!--# SIP User ID-->
 <!--# String-->
-    <P35>test3</P35>
+    <P35>6</P35>
 
 <!--# Authenticate ID-->
 <!--# String-->
-    <P36>auth3</P36>
+    <P36>6</P36>
 
 <!--# Authenticate Password-->
 <!--# String-->
-    <P34>pass3</P34>
+    <P34>6</P34>
 
 <!--# Display Name-->
 <!--# String-->
-    <P3>205</P3>
+    <P3>6</P3>
 
 <!--# Voice Mail UserID-->
 <!--# String-->
-    <P33>205</P33>
+    <P33>6</P33>
 
 <!--##########################################-->
 <!--# Account 1/Network Settings-->

@@ -407,7 +407,7 @@ P271 = 1
 
 # Account Name
 # String
-# P270 =
+P270 = 205
 
 # SIP Server
 # String
@@ -885,7 +885,7 @@ P66 =
 # Dial Plan. Default is { x+ | *x+ | *xx*x+ }
 # String
 # Mandatory
-P290 = { x+ | *x+ | *xx*x+ }
+P290 = { 10x | 0xx | *0xx | [2-9]xxxxxx | 314[2-9]xxxxxx | 636[2-9]xxxxxx | 1[2-9]xx[2-9]xxxxxx }
 
 # Delayed Call Forward Wait Time (in seconds). Default is 20
 # Number: 1 - 120
@@ -960,7 +960,7 @@ P90 = 0
 # Allow Auto Answer by Call-Info. 0 - No, 1 - Yes. Default is 0
 # Number: 0, 1
 # Mandatory
-P298 = 0
+P298 = 1
 
 # Custom Call-info for Auto Answer. 
 # String
