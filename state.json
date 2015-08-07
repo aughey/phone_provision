@@ -1,0 +1,17 @@
+{
+ "next_available": 14,
+ "mapping": {
+  "00:0b:82:5e:06:2d": {
+   "extension": 1
+  },
+  "00:0b:82:5e:05:c5": {
+   "extension": 2
+  },
+  "30:b5:c2:33:11:b8": {
+   "extension": 3
+  },
+  "00:0b:82:5e:03:a7": {
+   "extension": 4
+  }
+ }
+}
