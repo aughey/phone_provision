@@ -88,25 +88,27 @@ function generateConfig(mac,path) {
     console.log("Generating configuration for " + cmac);
 
     var mapping = state.mapping[cmac];
-    if(!mapping) {
+    if(!mapping || !mapping.extension) {
       mapping = {
         extension: get_next_available()
       }
       state.mapping[cmac] = mapping;
       console.log("  New extension given: " + mapping.extension);
+      console.log("  Next available extension: " + get_next_available());
     }
-    console.log("  Using extension: " + mapping.extension);
+    console.log("  Providing extension: " + mapping.extension);
 
     var template = fs.readFileSync("template.mustache").toString();
     var out = Mustache.render(template,{mac:mac,extension:pad(mapping.extension,3)});
-    fs.writeFileSync(path,out);
-
-    var stat = fs.statSync(path);
-    mapping.ctime = stat.ctime.toString();
+    if(path) {
+      fs.writeFileSync(path,out);
+      var stat = fs.statSync(path);
+      mapping.ctime = stat.ctime.toString();
+    }
 
     fs.writeFileSync("state.json",JSON.stringify(state,null," "));
     
-    deferred.resolve(true);
+    deferred.resolve(out);
 
     return deferred.promise;
 }
@@ -124,14 +126,17 @@ app.get(configre, function(req, res,next) {
     return;
   }
 
+/*
   if(!need_to_generate(mac,path)) {
 //    res.sendFile(path);
     next();
     return;
   }
+*/
 
-  generateConfig(mac,path).then(function() {
+  generateConfig(mac).then(function(data) {
  //   res.sendFile(path);
+    res.send(data);
     next();
   }).done();
 });
